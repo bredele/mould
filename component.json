@@ -1,0 +1,16 @@
+{
+  "name": "mould",
+  "repo": "bredele/mould",
+  "description": "Give shape to your bricks.",
+  "version": "0.0.0",
+  "keywords": [],
+  "dependencies": {
+  },
+  "development": {
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ]
+}

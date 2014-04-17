@@ -17,11 +17,12 @@ function mould() {
 
 
 /**
- * Parse arguments.
+ * Split string with separator and
+ * remove spaces.
  *
  * Examples:
  *
- *   mould.args('city, area, country');
+ *   mould.split('city, area, country', ',');
  *   // => ['city', 'area', 'country']
  *   
  * @param  {String} str
@@ -29,6 +30,7 @@ function mould() {
  * @api public
  */
 
-mould.args = function(str) {
-	return str.split(/\s*,\s*/);
+mould.split = function(str, separator) {
+	var re = new RegExp('\\s*' + separator + '\\s*');
+	return str.split(re);
 };

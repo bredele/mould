@@ -4,7 +4,7 @@
   "description": "Give shape to your bricks",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --reporter nyan"
   },
   "repository": {
     "type": "git",
@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/bredele/mould/issues"
   },
-  "homepage": "https://github.com/bredele/mould"
+  "homepage": "https://github.com/bredele/mould",
+  "devDependencies": {
+    "mocha": "^1.18.2"
+  }
 }

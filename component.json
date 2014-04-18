@@ -4,10 +4,8 @@
   "description": "Give shape to your bricks.",
   "version": "0.0.0",
   "keywords": [],
-  "dependencies": {
-  },
-  "development": {
-  },
+  "dependencies": {},
+  "development": {},
   "license": "MIT",
   "main": "index.js",
   "scripts": [

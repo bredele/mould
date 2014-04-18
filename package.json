@@ -1,6 +1,6 @@
 {
   "name": "mould",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Give shape to your bricks",
   "main": "index.js",
   "scripts": {

@@ -12,9 +12,31 @@ module.exports = mould;
  */
 
 function mould(fn) {
-	return function(node, content) {
-		fn.apply(null, mould.split(content));
-	};
+	if(typeof fn === 'object') {
+		return function(node, content) {
+			// NOTE: one function only right now
+			var macro = mould.split(content, ':');
+			fn[macro[0]].apply(null, concat(node, macro[1]));
+		};
+	} else {
+		return function(node, content) {
+			fn.apply(null, concat(node, content));
+
+		};
+	}
+}
+
+/**
+ * Concat arguments.
+ * 
+ * @param  {Object} node 
+ * @param  {String} content 
+ * @return {Array}
+ * @api private
+ */
+
+function concat(node, content) {
+	return [node].concat(mould.split(content, ','));
 }
 
 

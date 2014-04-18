@@ -25,15 +25,37 @@ describe("split", function() {
 
 describe('parse', function() {
 
-	describe("arguments", function(done) {
+	var node;
+	beforeEach(function() {
+		node = {};
+	});
+	
+	describe("arguments", function() {
 
 		it("transforms content into arguments", function() {
-			var fn = mould(function(node, city, country) {
-				if(city === 'calgary' && country === 'canada' ) done();
+			var fn = mould(function(el, city, country) {
+				assert.deepEqual(el, node);
+				assert.equal(city, 'calgary');
+				assert.equal(country, 'canada');
 			});
-			fn({}, 'calgary,   canada');
+			fn(node, 'calgary,   canada');
 		});
 		
+	});
+
+	describe('function', function() {
+
+		it('call function an pass arguments', function() {
+			var fn = mould({
+				location : function(el, city, country) {
+					assert.deepEqual(el, node);
+					assert.equal(city, 'calgary');
+					assert.equal(country, 'canada');
+				}
+			});
+			fn(node, 'location: calgary, canada');
+		});
+
 	});
 
 });

@@ -37,17 +37,39 @@ brick(span)
 
 ## Usage
 
-<!-- ```html
-<span data-plugin="do something"></span>
-```
+  Mould parses directive arguments (`arg1, arg2`) and passes them to the plugin:
 
-
+Plugin:
 ```js
 brick(span)
-  .add('data-plugin', mould(function(node, ) {
+  .add('data-plugin', mould(function(node, city, country) {
+    // do something
+  }))
+  .build();
+```
 
-  }));
-``` -->
+Directive:
+```js
+<span data-plugin="calgary, canada"></span>
+```
+
+  Mould allows you to pass an object as a plugin and call its functions: 
+
+Plugin:
+```js
+brick(span)
+  .add('data-plugin', mould({
+    location: function(node, city, country) {
+      // do something
+    }
+  }))
+  .build();
+```
+
+Directive:
+```js
+<span data-plugin="location: calgary, canada"></span>
+```
 
 ## License
 

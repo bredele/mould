@@ -11,8 +11,10 @@ module.exports = mould;
  * @api public
  */
 
-function mould() {
-  //do something
+function mould(fn) {
+	return function(node, content) {
+		fn.apply(null, mould.split(content));
+	};
 }
 
 

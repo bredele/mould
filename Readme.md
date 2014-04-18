@@ -49,7 +49,7 @@ brick(span)
 ```
 
 Directive:
-```js
+```html
 <span data-plugin="calgary, canada"></span>
 ```
 
@@ -67,7 +67,7 @@ brick(span)
 ```
 
 Directive:
-```js
+```html
 <span data-plugin="location: calgary, canada"></span>
 ```
 
